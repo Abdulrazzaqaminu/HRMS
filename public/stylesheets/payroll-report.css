@@ -1,0 +1,98 @@
+/* ROOT VARIABLES */
+:root{
+    --color-primary: #7380ec ;
+    --color-danger: #ff7782 ;
+    --color-success: #d7fada ;
+    --color-warning: #ffbb55 ;
+    --color-white: #fff ;
+    --color-muted: #787d8d;
+    --color-text: rgb(134,141,151);
+    --color-info-dark: #7d8da1 ;
+    --color-info-light: #dce1eb ;
+    --color-dark: #363949 ;
+    --color-light: rgba(132, 139, 200, 0.18) ;
+    --color-primary-variant: #111e88 ;
+    --color-menu: #111827 ;
+    --color-background: #E5E7EB ;
+  
+    --card-border-radius: 2rem ;
+    --border-radius-1: 0.4rem ;
+    --border-radius-2: 0.8rem ;
+    --border-radius-3: 1.2rem ;
+  
+    --card-padding: 1.8rem ;
+    --padding: 1.2rem ;
+  
+    --box-shadow: 0 2rem 3rem var(--color-light) ;
+  }
+  
+
+#interface .navigation .n1 .profile{
+    margin-top: 46px;
+}
+
+#report{
+    margin: 100px 280px;
+}
+
+#report p{
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+#report .report-forms{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 10px;
+    grid-gap: 150px;
+}
+
+#report .report-forms .form-1 form{
+    margin: 20px;
+    width: 110%;
+}
+
+#report .report-forms .form-1 form .report-field{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 10px;
+}
+
+#report .report-forms .form-1 form .report-field p{
+    font-weight: 400;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-left: -70px;
+}
+
+#report .report-forms .form-1 form .report-field label{
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+#report .report-forms .form-2 form{
+    margin: 20px;
+    width: 120%;
+}
+
+#report .report-forms .form-2 form .report-field{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 10px;
+}
+
+#report .report-forms .form-2 form .report-field p{
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: -70px;
+    white-space: nowrap;
+}
+
+#report .report-forms .form-2 form .report-field label{
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+#report .description thead{
+    background: var(--color-info-light);
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/profile.css' />
+    <link rel='stylesheet' href='/stylesheets/attendance-list.css' />
+    <link rel='stylesheet' href='/stylesheets/payroll-report.css' />
+    <!-- datatables/jquery -->
+
+    <link rel='stylesheet' href='/stylesheets/jquery.dataTables.min.css' />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="javascripts/jquery.dataTables.min.js"></script>
+
+    <!-- material icons -->
+    <link rel="stylesheet" href="/stylesheets/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <section id="menu">
+
+      <div class="logo">
+        <!-- <img src="/images/SAM_0027.JPG" alt=""> -->
+        <h2>HRMS</h2>
+      </div>
+
+      <div class="items">
+        <li>
+          <span class="material-symbols-sharp">dashboard</span>
+          <a href="/">Dashboard</a>
+        </li>
+        <li id="dropdownOrg">
+          <span class="material-symbols-sharp">corporate_fare</span>
+          <a href="#" onclick="return false;">Organization</a>
+          <span class="material-symbols-sharp dropdown">keyboard_arrow_down</span>
+          <div class="org dropdowns">
+           <a href="/department">Department</a>
+        </li>
+        <li>
+          <span class="material-symbols-sharp">badge</span>
+          <a href="/employees">Employees</a>
+        </li>
+        <li id="dropdownAtt">
+          <span class="material-symbols-sharp">monitoring</span>
+          <a href="#" onclick="return false;">Attendance</a>
+          <span class="material-symbols-sharp dropdown">keyboard_arrow_down</span>
+          <div class="att dropdowns">
+            <a href="/record-attendance">Record Attendance</a>
+            <br><br>
+            <a href="/attendance-report">Attendance Report</a>
+           </div>
+        </li>
+        <li>
+          <span class="material-symbols-sharp">person_add</span>
+          <a href="/enroll">Enrollment</a>
+        </li>
+        <li id="dropdownLev">
+          <span class="material-symbols-sharp">person_remove</span>
+          <a href="#" onclick="return false;">Leave</a>
+          <span class="material-symbols-sharp dropdown">keyboard_arrow_down</span>
+          <div class="lev dropdowns">
+            <a href="">Sick Leave</a>
+            <br><br>
+            <a href="">Casual Leave</a>
+            <br><br>
+            <a href="">Maternity Leave</a>
+            <br><br>
+            <a href="">Paternity Leave</a>
+            <br><br>
+            <a href="">Bereavement Leave</a>
+            <br><br>
+            <a href="">Sabbatical Leave</a>
+            <br><br>
+            <a href="">Unpaid Leave</a>
+           </div>
+        </li>
+        <li>
+          <span class="material-symbols-sharp">credit_card</span>
+          <a href="/payroll-list">Payroll</a>
+        </li>
+        <li id="dropdownLoan">
+          <span class="material-symbols-sharp">payments</span>
+          <a href="#" onclick="return false;">Loan</a>
+          <span class="material-symbols-sharp dropdown">keyboard_arrow_down</span>
+          <div class="loan dropdowns">
+            <a href="/loans-granted">Loans Granted</a>
+            <br><br>
+            <a href="/grant-loans">Grant Loan</a>
+           </div>
+        </li>
+      </div>
+
+    </section>
+    <!-- END OF MENU -->
+
+    <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+                <div class="profile">
+                  <a href=""><span class="material-symbols-sharp">account_circle</span></a> 
+                </div>
+              </div>
+        </div>
+    </section>
+    <section id="report">
+      <p>Payslip for the period of September 2022</p>
+      <div class="report-forms">
+        <div class="form-1">
+          <form>
+            <div class="report-field">
+              <label>Employee Pin</label>
+              <p>: 6600</p>
+            </div>
+            <div class="report-field">
+              <label>Department </label>
+              <p>: Accounting</p>
+            </div>
+            <div class="report-field">
+              <label>Pay Date</label>
+              <p>: 26 September 2022</p>
+            </div>
+            <div class="report-field">
+              <label>Days Worked</label>
+              <p>: 40</p>
+            </div>
+            <div class="report-field">
+              <label>Account Name</label>
+              <p>: Abdulrazzaq Ituah Muhammad</p>
+            </div>
+          </form>
+        </div>
+        <div class="form-2">
+          <form>
+            <div class="report-field">
+              <label>Employee Name</label>
+              <p>: Abdulrazzaq Ituah Muhammad</p>
+            </div>
+            <div class="report-field">
+              <label>Designation </label>
+              <p>: Certified Management Accountant </p>
+            </div>
+            <div class="report-field">
+              <label>Date Of Joining</label>
+              <p>: 14 July 2022</p>
+            </div>
+            <div class="report-field">
+              <label>Bank Name</label>
+              <p>: GT bank</p>
+            </div>
+            <div class="report-field">
+              <label>Account Number</label>
+              <p>: 0605365309</p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="description">
+        <table width="130%">
+          <thead>
+            <tr>
+              <td>Description</td>
+              <td>Earnings</td>
+              <td>Deductions</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Basic Salary</td>
+              <td>#1,000,000</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Medical Allowance</td>
+              <td>#80,000</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>House Rent</td>
+              <td>#300,000</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>conveyance allowance</td>
+              <td>#50,000</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Loan</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Working Hours</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>#800,000</td>
+              <td>#0</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Net Pay</td>
+              <td>#999,936</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <%- include('footer.ejs') -%>

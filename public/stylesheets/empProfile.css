@@ -1,0 +1,8 @@
+#interface .navigation{
+    padding: 58px 30px;
+    height: 80px;
+}
+
+#interface .navigation .profile a {
+    margin-top: 46px;    
+}

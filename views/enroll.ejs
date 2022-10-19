@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/stylesheets/enroll.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/profile.css' />
+    <!-- material icons -->
+    <link rel="stylesheet" href="/stylesheets/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( ".datepicker" ).datepicker({
+              beforeShow: function (input, inst) {
+                setTimeout(function () {
+                  inst.dpDiv.css({
+                    top: 200,
+                    left: 760
+                  });
+                },0);
+              },
+              changeYear: true,
+              changeMonth: true,
+              dateFormat: 'yy-mm-dd' 
+            });
+            $( "#format" ).on( "change", function() {
+            $( "#datepicker" ).datepicker( "option", "dateFormat", $( this ).val() );
+            });
+            
+        } );
+    </script>
+  <title><%= title %></title>
+</head>
+<body>
+     <!-- Sidebar -->
+     <section id="menu">
+
+        <div class="logo">
+          <!-- <img src="/images/SAM_0027.JPG" alt=""> -->
+          <h2>HRMS</h2>
+        </div>
+  
+        <div class="items">
+          <li>
+            <span class="material-symbols-sharp">dashboard</span>
+            <a href="/">Dashboard</a>
+          </li>
+          <li id="dropdownOrg">
+            <span class="material-symbols-sharp">corporate_fare</span>
+            <a href="#" onclick="return false;">Organization</a>
+            <span class="material-symbols-sharp dropdown">keyboard_arrow_down</span>
+            <div class="org dropdowns">
+             <a href="#" class="current">Department</a>
+          </li>
+          <li>
+            <span class="material-symbols-sharp">badge</span>
+            <a href="/employees">Employees</a>
+          </li>
+          <li id="dropdownAtt">
+            <span class="material-symbols-sharp">monitoring</span>
+            <a href="#" onclick="return false;">Attendance</a>
+            <span class="material-symbols-sharp dropdown">keyboard_arrow_down</span>
+            <div class="att dropdowns">
+              <a href="/record-attendance">Record Attendance</a>
+              <br><br>
+              <a href="/attendance-report">Attendance Report</a>
+             </div>
+          </li>
+          <li class="current">
+            <span class="material-symbols-sharp">person_add</span>
+            <a href="/enroll">Enrollment</a>
+          </li>
+          <li id="dropdownLev">
+            <span class="material-symbols-sharp">person_remove</span>
+            <a href="#" onclick="return false;">Leave</a>
+            <span class="material-symbols-sharp dropdown">keyboard_arrow_down</span>
+            <div class="lev dropdowns">
+              <a href="">Sick Leave</a>
+              <br><br>
+              <a href="">Casual Leave</a>
+              <br><br>
+              <a href="">Maternity Leave</a>
+              <br><br>
+              <a href="">Paternity Leave</a>
+              <br><br>
+              <a href="">Bereavement Leave</a>
+              <br><br>
+              <a href="">Sabbatical Leave</a>
+              <br><br>
+              <a href="">Unpaid Leave</a>
+             </div>
+          </li>
+          <li>
+            <span class="material-symbols-sharp">credit_card</span>
+            <a href="/payroll-list">Payroll</a>
+          </li>
+          <li id="dropdownLoan">
+            <span class="material-symbols-sharp">payments</span>
+            <a href="#" onclick="return false;">Loan</a>
+            <span class="material-symbols-sharp dropdown">keyboard_arrow_down</span>
+            <div class="loan dropdowns">
+              <a href="/loans-granted">Loans Granted</a>
+              <br><br>
+              <a href="/grant-loans">Grant Loan</a>
+             </div>
+          </li>
+        </div>
+  
+      </section>
+      <!-- END OF MENU -->
+      <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+              <div class="profile">
+                <a href=""><span class="material-symbols-sharp">account_circle</span></a> 
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <form action="/enroll" method="post">
+        <div class="field">
+            <label>Staff ID:</label>
+            <input type="text" name="staffid" required>
+        </div>
+        <div class="field">
+            <label>First Name:</label>
+            <input type="text" name="firstName" required>
+        </div>
+        <div class="field">
+            <label>Last Name:</label>
+            <input type="text" name="lastName"  required>
+        </div>
+        <div class="field ">
+            <label>Email:</label>
+            <input type="email" name="email"  required>
+        </div>
+        <div class="field dob">
+            <label>Date Of Birth:</label>
+            <input type="text" class="datepicker" name="dob" autocomplete="off" required>
+        </div>
+        <div class="field ">
+            <label>Phone Number:</label>
+            <input type="text" onkeyup="numbersOnly(this)"  maxlength="11" name="phoneNumber" required>
+        </div>
+        <div class="field">
+            <label>Dept:</label>
+            <select name="dept" id="" required>
+              <option value="">Choose...</option>
+              <option value="IT">IT</option>
+              <option value="Business">Business</option>
+              <option value="Research & Developmemt">Research & Developmemt</option>
+            </select>
+        </div>
+        <div class="field">
+            <label>Unit:</label>
+            <select name="unit" id="" required>
+              <option value="">Choose...</option>
+              <option value="Software Developmemt">Software Developmemt</option>
+              <option value="Retails">Retails</option>
+              <option value="UI/UX Design">UI/UX Design</option>
+              <option value="Network Engineering">Network Engineering</option>
+            </select>
+        </div>
+        <div class="field ">
+            <label>Position:</label>
+            <select name="position" id="" required>
+                <option value="">Choose...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div class="field ">
+            <label>Grade:</label>
+            <select name="grade" id="" required>
+                <option value="">Choose...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div class="field">
+            <label>Enrollment date:</label>
+            <input type="text" class="datepicker" autocomplete="off"  name="enrollDate" required>
+        </div>
+        <div class="field address">
+            <label>Address:</label>
+            <input type="text" placeholder="state" name="state" required>
+            <input type="text" placeholder="city" name="city" required>
+            <input type="text" placeholder="street" name="street" required>
+        </div>
+        <br>
+        <button>Submit</button>
+    </form>
+    <%- include('footer.ejs') -%>

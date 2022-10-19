@@ -1,0 +1,27 @@
+#interface .table table tbody tr td a{
+    padding: 2px 5px;
+    text-decoration: none;
+    margin-top: 18px;
+    color: red;
+    border-radius: 3px;
+    width: 6vw;
+    border: none;
+    cursor: pointer;
+    background: rgb(236, 212, 212);
+}
+
+#interface .navigation .n1 .filter form .month{
+    padding: 10px 14px;
+    border: 1px solid #d7dbe6;
+    border-radius: 4px;
+}
+
+#interface .navigation .n1 .filter form button{
+    padding: 3px;
+    color: red;
+    border-radius: 5px;
+    width: 6vw;
+    border: none;
+    cursor: pointer;
+    background: rgb(236, 212, 212);
+}

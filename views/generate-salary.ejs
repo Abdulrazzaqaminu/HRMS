@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/profile.css' />
+    <link rel='stylesheet' href='/stylesheets/generate-salary.css' />
+    <!-- material icons -->
+    <link rel="stylesheet" href="/stylesheets/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+  <body>
+
+     <!-- Sidebar -->
+     <section id="menu">
+
+      <div class="logo">
+        <!-- <img src="/images/SAM_0027.JPG" alt=""> -->
+        <h2>HRMS</h2>
+      </div>
+
+      <div class="items">
+        <li>
+          <span class="material-symbols-sharp">dashboard</span>
+          <a href="/">Dashboard</a>
+        </li>
+        <li id="dropdownOrg">
+          <span class="material-symbols-sharp">corporate_fare</span>
+          <a href="#" onclick="return false;">Organization</a>
+          <span class="material-symbols-sharp dropdown">keyboard_arrow_down</span>
+          <div class="org dropdowns">
+           <a href="#" class="current">Department</a>
+        </li>
+        <li>
+          <span class="material-symbols-sharp">badge</span>
+          <a href="/employees">Employees</a>
+        </li>
+        <li id="dropdownAtt">
+          <span class="material-symbols-sharp">monitoring</span>
+          <a href="#" onclick="return false;">Attendance</a>
+          <span class="material-symbols-sharp dropdown">keyboard_arrow_down</span>
+          <div class="att dropdowns">
+            <a href="/record-attendance">Record Attendance</a>
+            <br><br>
+            <a href="/attendance-report">Attendance Report</a>
+           </div>
+        </li>
+        <li>
+          <span class="material-symbols-sharp">person_add</span>
+          <a href="/enroll">Enrollment</a>
+        </li>
+        <li id="dropdownLev">
+          <span class="material-symbols-sharp">person_remove</span>
+          <a href="#" onclick="return false;">Leave</a>
+          <span class="material-symbols-sharp dropdown">keyboard_arrow_down</span>
+          <div class="lev dropdowns">
+            <a href="">Sick Leave</a>
+            <br><br>
+            <a href="">Casual Leave</a>
+            <br><br>
+            <a href="">Maternity Leave</a>
+            <br><br>
+            <a href="">Paternity Leave</a>
+            <br><br>
+            <a href="">Bereavement Leave</a>
+            <br><br>
+            <a href="">Sabbatical Leave</a>
+            <br><br>
+            <a href="">Unpaid Leave</a>
+           </div>
+        </li>
+        <li>
+          <span class="material-symbols-sharp">credit_card</span>
+          <a href="/payroll-list">Payroll</a>
+        </li>
+        <li id="dropdownLoan">
+          <span class="material-symbols-sharp">payments</span>
+          <a href="#" onclick="return false;">Loan</a>
+          <span class="material-symbols-sharp dropdown">keyboard_arrow_down</span>
+          <div class="loan dropdowns">
+            <a href="/loans-granted">Loans Granted</a>
+            <br><br>
+            <a href="/grant-loans">Grant Loan</a>
+           </div>
+        </li>
+      </div>
+
+    </section>
+    <!-- END OF MENU -->
+    <section id="interface">
+      <div class="navigation">
+          <div class="n1">
+            <div class="profile">
+              <a href=""><span class="material-symbols-sharp">account_circle</span></a> 
+            </div>
+          </div>
+      </div>
+  </section>
+
+      <div class="generate-salary">
+        <form>
+          <div class="field">
+            <label>Staff Id</label>
+            <input type="text" disabled placeholder="<%=empInfo.staff_id %>">
+          </div>
+          <div class="field">
+            <label>First Name</label>
+            <input type="text" disabled placeholder="<%=empInfo.first_name %>">
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input type="text" disabled placeholder="<%=empInfo.last_name %>">
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="text" disabled placeholder="<%=empInfo.email %>">
+          </div>
+          <div class="field">
+            <label>Position</label>
+            <input type="text" disabled placeholder="<%=empInfo.position %>">
+          </div>
+          <div class="field">
+            <label>Grade</label>
+            <input type="text" disabled placeholder="<%=empInfo.grade %>">
+          </div>
+          <div class="field">
+            <label>Worked Days</label>
+            <input type="text" disabled placeholder="<%=number_of_days_worked %>">
+          </div>
+          <!-- <div class="field">
+            <label>Hours Worked</label>
+            <input type="text" disabled placeholder="<%=hours %>">
+          </div> -->
+          <!-- <div class="field">
+            <label>Statutory Relief (Per Working Days)</label>
+            <input type="text" disabled placeholder="<%=statutory_relief_perday_formatted %>">
+          </div>  
+          <div class="field">
+            <label>Gross Salary (Per Working Days)</label>
+            <input type="text" disabled placeholder="<%=gross_perday_formatted %>">
+          </div>
+          <div class="field">
+            <label>Taxable Income (Per Working Days)</label>
+            <input type="text" disabled placeholder="<%=taxable_income_perday_formatted %>">
+          </div> -->
+          <div class="field">
+            <label>Tax (Per Working Days)</label>
+            <input type="text" disabled placeholder="<%='NGN '+tax_perday_formatted %>">
+          </div>
+          <div class="field">
+            <label>Net Salary (Per Working Days)</label>
+            <input type="text" class="long" disabled placeholder="<%='NGN '+netsalary_perday_formatted%>">
+          </div>
+        </form>
+      </div>
+<%- include('footer.ejs') -%>

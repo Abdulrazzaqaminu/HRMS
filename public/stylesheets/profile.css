@@ -1,0 +1,7 @@
+#interface .navigation{
+    padding: 38px 30px;
+}
+
+#interface .navigation .profile a {
+    margin-bottom: -6px;    
+}

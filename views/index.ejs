@@ -1,0 +1,95 @@
+<%- include('menu.ejs') -%>
+    <section id="interface">
+
+      <div class="navigation">
+        <div class="n1">
+          <div class="search">
+            <span class="material-symbols-sharp">search</span>
+            <input type="text" id="myInput" onkeyup="tableSearch()" placeholder="Search" autofocus>
+          </div>
+
+          <div class="profile">
+            <a href=""><span class="material-symbols-sharp">account_circle</span></a> 
+          </div>
+        </div>
+      </div>
+
+      <div class="i-name">
+        <h3>Dashboard</h3>
+      </div>
+
+      <div class="cards">
+        <div class="card-box">
+          <span class="material-symbols-sharp">groups</span>
+          <div class="info">
+            <h3><%= totalEmp %></h3>
+            <span>Employees</span>
+          </div>
+        </div>
+
+        <div class="card-box">
+          <span class="material-symbols-sharp">monitoring</span>
+          <div class="info">
+            <h3><%= totalEnt %></h3>
+            <span>Entry</span>
+          </div>
+        </div>
+        
+        <div class="card-box">
+          <span class="material-symbols-sharp">logout</span>
+          <div class="info">
+            <h3><%= totalExt %></h3>
+            <span>Exit</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="table">
+        <table width="100%" id="example">
+          <thead>
+            <tr>
+              <th>Staff Id</th>
+              <th>Name</th>
+              <th>Date</th>
+              <th>Entry Time</th>
+              <th>Exit Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% empList.forEach((row) =>{%>
+              <tr>
+                <td>
+                  <p><%= row.staff_id %></p>       
+                </td>
+                <td class="employees">
+                  <!-- <img src="images/SAM_0027.JPG" alt=""> -->
+                  <div class="employee-dets">
+                    <p><%= row.first_name+' '+row.last_name %></p>
+                  </div>
+                </td>
+                <td class="employee-details">
+                  <p><%= row.date %></p>
+                </td>
+                <td>
+                  <% if(row.in_time === "Checked Out"){%>
+                    <p class="in"><%= row.in_time %></p>
+                  <%} else{%>
+                    <p><%= row.in_time %></p>
+                  <%}%>
+                </td>
+                <td>
+                  <% if(row.out_time === "Still In"){%>
+                    <p class="out"><%= row.out_time %></p>
+                  <%} else{%>
+                    <p><%= row.out_time %></p>
+                  <%}%>
+                </td>
+              </tr>
+            <%})%>
+          </tbody>
+
+        </table>
+      </div>
+
+    </section>
+<%- include('footer.ejs') -%>

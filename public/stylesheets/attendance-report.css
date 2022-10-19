@@ -1,0 +1,57 @@
+#interface .navigation .n1 .filter form{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+#interface .navigation .n1 .filter form .from{
+    padding: 10px 14px;
+    border: 1px solid #d7dbe6;
+    border-radius: 4px;
+}
+#interface .navigation .n1 .filter form .to{
+    padding: 10px 14px;
+    border: 1px solid #d7dbe6;
+    border-radius: 4px;
+}
+#interface .navigation .n1 .filter form input{
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+#interface .navigation .n1 .filter form .employee-name{
+    padding: 10px 14px;
+    border: 1px solid #d7dbe6;
+    border-radius: 4px;
+}
+#interface .navigation .n1 .filter form button{
+    padding: 8px;
+    color: red;
+    border-radius: 5px;
+    width: 6vw;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+
+#interface .table td .in{
+    padding: 1px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: red;
+    width: 40%;
+    background: rgb(236, 212, 212);
+  }
+  
+  #interface .table td .out{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    padding: 1px 30px;
+    border-radius: 5px;
+    width: 30%;
+    background: rgb(199, 241, 199);
+  }
